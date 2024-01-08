@@ -1,4 +1,4 @@
-import { Args, Context, Mutation, Query } from '@nestjs/graphql';
+import { Args, Context, Mutation, Query, Resolver } from '@nestjs/graphql';
 
 import { SUCCESS, UPDATE_ERROR } from '@/common/constants/code';
 import { Result } from '@/common/dto/result.type';
@@ -7,6 +7,7 @@ import { UserInput } from './dto/user-input.type';
 import { UserType } from './dto/user.type';
 import { UserService } from './user.service';
 
+@Resolver()
 export class UserResolver {
   constructor(private readonly userService: UserService) {}
 

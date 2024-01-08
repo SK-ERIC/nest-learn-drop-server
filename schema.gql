@@ -2,6 +2,26 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
+type OSSType {
+  """过期时间"""
+  expire: String!
+
+  """策略"""
+  policy: String!
+
+  """签名"""
+  signature: String!
+
+  """key"""
+  accessId: String!
+
+  """host"""
+  host: String!
+
+  """dir"""
+  dir: String!
+}
+
 type Result {
   code: Int!
   message: String
@@ -22,26 +42,6 @@ type UserType {
 
   """头像"""
   avatar: String
-}
-
-type OSSType {
-  """过期时间"""
-  expire: String!
-
-  """策略"""
-  policy: String!
-
-  """签名"""
-  signature: String!
-
-  """key"""
-  accessId: String!
-
-  """host"""
-  host: String!
-
-  """dir"""
-  dir: String!
 }
 
 type Query {
