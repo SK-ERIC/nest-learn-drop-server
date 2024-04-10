@@ -2,6 +2,9 @@ import { Field, InputType } from '@nestjs/graphql';
 
 @InputType()
 export class UserInput {
+  @Field({ description: '账号' })
+  account: string;
+
   @Field({ description: '昵称' })
   name?: string;
 

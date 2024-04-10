@@ -31,14 +31,14 @@ type OSSType {
 type UserType {
   id: String!
 
+  """账号"""
+  account: String!
+
   """昵称"""
   name: String!
 
   """简介"""
   desc: String!
-
-  """tel"""
-  tel: String!
 
   """头像"""
   avatar: String
@@ -66,10 +66,13 @@ type Mutation {
   del(id: String!): Boolean!
 
   """登录"""
-  login(username: String!, password: String!): Result!
+  login(account: String!, password: String!): Result!
 }
 
 input UserInput {
+  """账号"""
+  account: String!
+
   """昵称"""
   name: String!
 

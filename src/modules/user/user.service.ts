@@ -43,23 +43,12 @@ export class UserService {
     return res;
   }
 
-  async findByTel(tel: string): Promise<User> {
+  async findByAccount(account: string): Promise<User> {
     const res = await this.userRepository.findOne({
       where: {
-        tel,
+        account,
       },
     });
     return res;
-  }
-
-  async updateCode(id: string, code: string): Promise<boolean> {
-    const res = await this.userRepository.update(id, {
-      code,
-      codeCreateTimeAt: new Date(),
-    });
-    if (res.affected > 0) {
-      return true;
-    }
-    return false;
   }
 }

@@ -1,9 +1,13 @@
+import { UseGuards } from '@nestjs/common';
 import { Query, Resolver } from '@nestjs/graphql';
+
+import { GqlAuthGuard } from '@/common/guards/auth.guard';
 
 import { OSSType } from './dto/oss.type';
 import { OSSService } from './oss.service';
 
 @Resolver()
+@UseGuards(GqlAuthGuard)
 export class OSSResolver {
   constructor(private readonly ossService: OSSService) {}
 
